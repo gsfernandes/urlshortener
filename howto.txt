@@ -1,5 +1,6 @@
 //TODO
 Description:
 
-The shortenerurl project is a prototype solution to a simple problem like having short urls to be shared
-in applications such Twitter or Facebook without using too many characters.
+The shortenerurl project is a prototype solution to a simple problem 
+like having short urls to be shared in applications such Twitter or Facebook 
+without using too many characters.

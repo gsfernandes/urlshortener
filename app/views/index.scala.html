@@ -1,0 +1,34 @@
+@(urls: List[Url], urlForm: Form[String])
+
+@import helper._
+
+@main("URL Shortener") {
+    
+    <h1>@urls.size url(s)</h1>
+
+    <ul>
+    	@urls.map { url =>
+    		<li>
+    			@url.id 
+    			||
+    			<a href="@url.url">@url.url</a>
+    			||	
+    			<a href="@url.shortenUrl">@url.shortenUrl</a>
+    			||
+    			@url.created
+    			||
+    			@form(routes.Application.deleteUrl(url.id)) {
+    				<input type="submit" value="Delete">
+    			}
+    		</li>
+    	}
+    </ul>
+
+    <h2>Create a new shorten URL</h2>
+
+    @form(routes.Application.newUrl) {
+    	@inputText(urlForm("url"))
+    	<input type="submit" value="Create">
+    }
+    
+}
